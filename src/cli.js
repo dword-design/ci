@@ -8,7 +8,7 @@ import { map } from '@dword-design/functions'
 makeCli({
   commands: [
     {
-      name: 'push-changes',
+      name: 'push-changed-files',
       handler: async () => {
         await execa.command('git config --local user.email "actions@github.com"', { stdio: 'inherit' })
         await execa.command('git config --local user.name "GitHub Actions"', { stdio: 'inherit' })
