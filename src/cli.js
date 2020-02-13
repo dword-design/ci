@@ -27,7 +27,7 @@ makeCli({
     {
       name: 'coveralls',
       handler: async () => {
-        const content = safeReadFileSync('./coverage/lcov.info', 'utf8') || ''
+        const content = safeReadFileSync('./coverage/lcov.info', 'utf8') ?? ''
         if (content !== '') {
           await execa.command('yarn add coveralls', { stdio: 'inherit' })
           const childProcess = execa.command('yarn coveralls', { stdio: ['pipe', 'inherit', 'inherit'] })
