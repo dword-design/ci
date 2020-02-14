@@ -13,7 +13,6 @@ makeCli({
         await execa.command('git config --local user.email "actions@github.com"', { stdio: 'inherit' })
         await execa.command('git config --local user.name "GitHub Actions"', { stdio: 'inherit' })
         await execa.command(`git remote set-url origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`, { stdio: 'inherit' })
-        await execa.command('git checkout yarn.lock', { stdio: 'inherit' })
         await execa.command('git add .', { stdio: 'inherit' })
         try {
           await execa.command('git commit -m "Update\\ changed\\ files" --no-verify', { stdio: 'inherit' })
