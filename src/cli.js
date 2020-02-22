@@ -15,7 +15,7 @@ makeCli({
         await execa.command(`git remote set-url origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`, { stdio: 'inherit' })
         await execa.command('git add .', { stdio: 'inherit' })
         try {
-          await execa('git', ['commit', '-m', 'fix(config): Update changed files', '--no-verify'], { stdio: 'inherit' })
+          await execa('git', ['commit', '-m', 'fix(config): Update changed files'], { stdio: 'inherit' })
         } catch {
           console.log('Continuing …')
         }

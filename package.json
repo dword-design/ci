@@ -13,9 +13,11 @@
     "dist"
   ],
   "scripts": {
+    "commit": "base commit",
     "depgraph": "base depgraph",
     "prepare": "base prepare",
     "prepublishOnly": "base prepublishOnly",
+    "release": "base release",
     "test": "base test"
   },
   "dependencies": {
@@ -25,6 +27,6 @@
     "safe-readfile": "^1.0.2"
   },
   "devDependencies": {
-    "@dword-design/base": "^5.4.0"
+    "@dword-design/base": "^6.0.0"
   }
 }
