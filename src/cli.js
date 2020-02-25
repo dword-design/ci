@@ -3,19 +3,24 @@
 import makeCli from 'make-cli'
 import execa from 'execa'
 import { readFileSync as safeReadFileSync } from 'safe-readfile'
-import { map } from '@dword-design/functions'
+import { map, split, intersection } from '@dword-design/functions'
+import releasedFiles from './released-files.json'
 
 makeCli({
   commands: [
     {
-      name: 'push-changed-files',
-      handler: async () => {
+      name: 'push-changed-files [remoteUrl]',
+      handler: async (remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`) => {
         await execa.command('git config --local user.email "actions@github.com"', { stdio: 'inherit' })
         await execa.command('git config --local user.name "GitHub Actions"', { stdio: 'inherit' })
-        await execa.command(`git remote set-url origin https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`, { stdio: 'inherit' })
+        await execa.command(`git remote set-url origin ${remoteUrl}`, { stdio: 'inherit' })
         await execa.command('git add .', { stdio: 'inherit' })
+
+        const { all: changedFilesString } = await execa.command('git diff --name-only --staged', { all: true })
+        const commitType = (changedFilesString |> split('\n') |> intersection(releasedFiles)).length > 0 ? 'fix' : 'chore'
+
         try {
-          await execa('git', ['commit', '-m', 'fix(config): Update changed files'], { stdio: 'inherit' })
+          await execa('git', ['commit', '-m', `${commitType}(config): Update changed files`], { stdio: 'inherit' })
         } catch {
           console.log('Continuing …')
         }
