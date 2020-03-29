@@ -958,9 +958,9 @@
     sass-loader "^8.0.0"
 
 "@dword-design/base@^6.0.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-6.5.0.tgz#76e5b26f78a5f5fdd654c05e5ab47b31ddef31d3"
-  integrity sha512-4//b6YjHd+0vm7tLPdr/KIhWC+v4s9yWPWIFLrppCqcW852r/jSw4cAHOOjFfpMGpLtZBnRnKNPuB1FISwrs+g==
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-6.6.0.tgz#6290300601e604faeaabcf8ac6887c3a74bdd687"
+  integrity sha512-W9Rd4JSr+zYggtPC53udFDkUSTtyugNJNVYH13ZQnP1hWCaeJXro3rIR8/kf3YpnSdOMaOvXkhuf27r6+UBJBw==
   dependencies:
     "@babel/core" "^7.6.4"
     "@babel/register" "^7.6.2"
