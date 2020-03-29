@@ -24,7 +24,7 @@ makeCli({
         } catch {
           console.log('Continuing …')
         }
-        await execa.command('git pull', { stdio: 'inherit' })
+        await execa.command('git pull --rebase', { stdio: 'inherit' })
         await execa.command('git push', { stdio: 'inherit' })
       },
     },
