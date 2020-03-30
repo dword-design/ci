@@ -11,8 +11,6 @@ makeCli({
     {
       name: 'push-changed-files [remoteUrl]',
       handler: async (remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`) => {
-        await execa.command('git config --local user.email "actions@github.com"', { stdio: 'inherit' })
-        await execa.command('git config --local user.name "GitHub Actions"', { stdio: 'inherit' })
         await execa.command(`git remote set-url origin ${remoteUrl}`, { stdio: 'inherit' })
         await execa.command('git add .', { stdio: 'inherit' })
 
