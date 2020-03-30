@@ -1,3 +1,14 @@
+## [1.0.5](https://github.com/dword-design/ci/compare/v1.0.4...v1.0.5) (2020-03-30)
+
+
+### Bug Fixes
+
+* distinguish between files when pushing back ([3a70350](https://github.com/dword-design/ci/commit/3a70350ccd8386ef79ced65c3edceac38075df4d))
+* pull with rebase ([44fd7e4](https://github.com/dword-design/ci/commit/44fd7e41cf36fd61a12acae73eb3add3906d010f))
+* upgrades ([f83ac72](https://github.com/dword-design/ci/commit/f83ac721c0419876edb8cf8f317a11b8be742992))
+* upgrades ([610b00f](https://github.com/dword-design/ci/commit/610b00f70c119c77e1d17f2db6d6f8a366075376))
+* upgrades ([09f3465](https://github.com/dword-design/ci/commit/09f34653cb759ece711622e64d45c1a5d094df2a))
+
 ## [1.0.4](https://github.com/dword-design/ci/compare/v1.0.3...v1.0.4) (2020-02-22)
 
 
