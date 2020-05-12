@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@dword-design/base": "^6.0.0",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "output-files": "^1.1.15",
     "with-local-tmp-dir": "^2.2.8"
   },
