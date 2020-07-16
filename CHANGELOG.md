@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/dword-design/ci/compare/v1.0.6...v1.0.7) (2020-07-16)
+
+
+### Bug Fixes
+
+* updates and remove coveralls command ([65c668b](https://github.com/dword-design/ci/commit/65c668bd537df4df8a62ff5ed8851a26842e6780))
+
 ## [1.0.6](https://github.com/dword-design/ci/compare/v1.0.5...v1.0.6) (2020-05-13)
 
 
