@@ -1,9 +1,30 @@
-import withLocalTmpDir from 'with-local-tmp-dir'
+import { endent, mapValues } from '@dword-design/functions'
 import execa from 'execa'
-import P from 'path'
 import { ensureDir, outputFile } from 'fs-extra'
 import outputFiles from 'output-files'
-import { endent, mapValues } from '@dword-design/functions'
+import P from 'path'
+import withLocalTmpDir from 'with-local-tmp-dir'
+
+const runTest = config => () =>
+  withLocalTmpDir(async () => {
+    await ensureDir('remote')
+    process.chdir('remote')
+    await execa.command('git init --bare')
+    process.chdir('..')
+    await execa.command('git clone remote local')
+    process.chdir('local')
+    await outputFile('.gitkeep', '')
+    await execa.command('git add .')
+    await execa.command('git commit -m "init"')
+    await execa.command('git push origin master')
+    await outputFiles(config.files)
+    await execa(require.resolve('./cli'), [
+      'push-changed-files',
+      P.join('..', 'remote'),
+    ])
+    const output = await execa.command('git log -n 1', { all: true })
+    config.test(output.all)
+  })
 
 export default {
   'released files': {
@@ -22,22 +43,4 @@ export default {
     },
     test: all => expect(all).toMatch('chore(config):'),
   },
-}
-  |> mapValues(({ files, test }) => () => withLocalTmpDir(
-    async () => {
-      ensureDir('remote') |> await
-      process.chdir('remote')
-      execa.command('git init --bare') |> await
-      process.chdir('..')
-      execa.command('git clone remote local') |> await
-      process.chdir('local')
-      outputFile('.gitkeep', '') |> await
-      execa.command('git add .') |> await
-      execa.command('git commit -m "init"') |> await
-      execa.command('git push origin master') |> await
-      outputFiles(files) |> await
-      execa(require.resolve('./cli'), ['push-changed-files', P.join('..', 'remote')]) |> await
-      const { all } = execa.command('git log -n 1', { all: true }) |> await
-      test(all)
-    },
-  ))
+} |> mapValues(runTest)
