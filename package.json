@@ -22,8 +22,11 @@
   },
   "dependencies": {
     "@dword-design/functions": "^2.7.2",
+    "coveralls": "^3.1.0",
     "execa": "^4.0.0",
-    "make-cli": "^1.0.16"
+    "get-package-name": "^1.1.0",
+    "make-cli": "^1.0.16",
+    "safe-readfile": "^1.0.2"
   },
   "devDependencies": {
     "@dword-design/base": "^6.0.0",

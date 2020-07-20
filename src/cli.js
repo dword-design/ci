@@ -2,7 +2,9 @@
 
 import { intersection, map, split } from '@dword-design/functions'
 import execa from 'execa'
+import getPackageName from 'get-package-name'
 import makeCli from 'make-cli'
+import { readFileSync as safeReadFileSync } from 'safe-readfile'
 
 import releasedFiles from './released-files.json'
 
@@ -37,6 +39,22 @@ makeCli({
           await execa.command('git push', { stdio: 'inherit' })
         },
         name: 'push-changed-files [remoteUrl]',
+      },
+      {
+        // coverallsapp/github-action does not wirk with empty lcov.info files
+        handler: async () => {
+          const content = safeReadFileSync('./coverage/lcov.info', 'utf8') || ''
+          if (content !== '') {
+            const childProcess = execa.command(
+              `yarn ${getPackageName(require.resolve('coveralls'))}`,
+              { stdio: ['pipe', 'inherit', 'inherit'] }
+            )
+            childProcess.stdin.write(content)
+            childProcess.stdin.end()
+            await childProcess
+          }
+        },
+        name: 'coveralls',
       },
     ]
     |> map(command => ({
