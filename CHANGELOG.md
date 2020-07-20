@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dword-design/ci/compare/v1.0.7...v1.1.0) (2020-07-20)
+
+
+### Features
+
+* re-add coveralls ([a984d2a](https://github.com/dword-design/ci/commit/a984d2a8ccb1cb9bdb7efd6a679eb7537b9e9c93))
+
 ## [1.0.7](https://github.com/dword-design/ci/compare/v1.0.6...v1.0.7) (2020-07-16)
 
 
