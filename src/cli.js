@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import { intersection, map, split } from '@dword-design/functions'
+import packageName from 'depcheck-package-name'
 import execa from 'execa'
-import getPackageName from 'get-package-name'
 import makeCli from 'make-cli'
 import { readFileSync as safeReadFileSync } from 'safe-readfile'
 
@@ -46,7 +46,7 @@ makeCli({
           const content = safeReadFileSync('./coverage/lcov.info', 'utf8') || ''
           if (content !== '') {
             const childProcess = execa.command(
-              `yarn ${getPackageName(require.resolve('coveralls'))}`,
+              `yarn ${packageName`coveralls`}`,
               { stdio: ['pipe', 'inherit', 'inherit'] }
             )
             childProcess.stdin.write(content)
