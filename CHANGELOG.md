@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/dword-design/ci/compare/v1.1.0...v1.1.1) (2020-12-11)
+
+
+### Bug Fixes
+
+* upgrades ([736a3f4](https://github.com/dword-design/ci/commit/736a3f42643c00d1ba20cceb6ff93ed8689dd0ff))
+* **deps:** update dependency execa to v5 ([fa3f023](https://github.com/dword-design/ci/commit/fa3f023bf7d151b514db24af98d22f63c0b073c8))
+
 # [1.1.0](https://github.com/dword-design/ci/compare/v1.0.7...v1.1.0) (2020-07-20)
 
 
