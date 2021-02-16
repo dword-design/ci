@@ -26,12 +26,12 @@ makeCli({
             |> await
             |> property('all')
             |> split('\n')
-          console.log(filenames)
           if (filenames.length > 0) {
             const commitType =
-            (filenames |> intersection(releasedFiles) |> property('length')) > 0
-              ? 'fix'
-              : 'chore'
+              (filenames |> intersection(releasedFiles) |> property('length')) >
+              0
+                ? 'fix'
+                : 'chore'
             await execa(
               'git',
               ['commit', '-m', `${commitType}: update changed files`],
