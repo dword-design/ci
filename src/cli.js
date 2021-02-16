@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { intersection, map, split } from '@dword-design/functions'
+import { intersection, map, property, split } from '@dword-design/functions'
 import packageName from 'depcheck-package-name'
 import execa from 'execa'
 import makeCli from 'make-cli'
@@ -19,24 +19,25 @@ makeCli({
             stdio: 'inherit',
           })
           await execa.command('git add .', { stdio: 'inherit' })
-          const output = await execa.command('git diff --name-only --staged', {
-            all: true,
-          })
+          const filenames =
+            execa.command('git diff --name-only --staged', {
+              all: true,
+            })
+            |> await
+            |> property('all')
+            |> split('\n')
           const commitType =
-            (output.all |> split('\n') |> intersection(releasedFiles)).length >
-            0
+            (filenames |> intersection(releasedFiles) |> property('length')) > 0
               ? 'fix'
               : 'chore'
-          try {
+          if (filenames.length > 0) {
             await execa(
               'git',
               ['commit', '-m', `${commitType}: update changed files`],
               { stdio: 'inherit' }
             )
-          } catch {
-            console.log('Continuing …')
+            await execa.command('git push', { stdio: 'inherit' })
           }
-          await execa.command('git push', { stdio: 'inherit' })
         },
         name: 'push-changed-files [remoteUrl]',
       },

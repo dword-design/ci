@@ -35,12 +35,12 @@ export default {
         }
       `,
     },
-    test: all => expect(all).toMatch('fix(config):'),
+    test: all => expect(all).toMatch('fix:'),
   },
   'unreleased files': {
     files: {
       '.gitpod.yml': '',
     },
-    test: all => expect(all).toMatch('chore(config):'),
+    test: all => expect(all).toMatch('chore:'),
   },
 } |> mapValues(runTest)
