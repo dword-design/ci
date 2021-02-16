@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/dword-design/ci/compare/v1.1.1...v1.1.2) (2021-02-16)
+
+
+### Bug Fixes
+
+* fix commit title case ([#10](https://github.com/dword-design/ci/issues/10)) ([e1df545](https://github.com/dword-design/ci/commit/e1df54578cbe0c1a202e9636365337a9890017cd))
+
 ## [1.1.1](https://github.com/dword-design/ci/compare/v1.1.0...v1.1.1) (2020-12-11)
 
 
