@@ -30,7 +30,7 @@ makeCli({
           try {
             await execa(
               'git',
-              ['commit', '-m', `${commitType}(config): Update changed files`],
+              ['commit', '-m', `${commitType}: update changed files`],
               { stdio: 'inherit' }
             )
           } catch {
