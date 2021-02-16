@@ -18,9 +18,8 @@ makeCli({
           await execa.command(`git remote set-url origin ${remoteUrl}`, {
             stdio: 'inherit',
           })
-          await execa.command('git add .', { stdio: 'inherit' })
           const filenames =
-            execa.command('git diff --name-only --staged', {
+            execa.command('git diff --name-only', {
               all: true,
             })
             |> await
@@ -32,6 +31,7 @@ makeCli({
               0
                 ? 'fix'
                 : 'chore'
+            await execa.command('git add .', { stdio: 'inherit' })
             await execa(
               'git',
               ['commit', '-m', `${commitType}: update changed files`],
