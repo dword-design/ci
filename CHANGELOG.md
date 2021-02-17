@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/dword-design/ci/compare/v1.1.2...v1.1.3) (2021-02-17)
+
+
+### Bug Fixes
+
+* upgrades ([2b16215](https://github.com/dword-design/ci/commit/2b16215030c58677799f9565b4e4e0af3da84530))
+
 ## [1.1.2](https://github.com/dword-design/ci/compare/v1.1.1...v1.1.2) (2021-02-16)
 
 
