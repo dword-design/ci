@@ -11,6 +11,8 @@ const runTest = config => () => {
     await ensureDir('remote')
     process.chdir('remote')
     await execa.command('git init --bare')
+    await execa.command('git config user.email "foo@bar.de"')
+    await execa.command('git config user.name "foo"')
     process.chdir('..')
     await execa.command('git clone remote local')
     process.chdir('local')
