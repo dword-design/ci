@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dword-design/ci/compare/v1.1.3...v2.0.0) (2021-03-11)
+
+
+### Features
+
+* remove coveralls ([7bf0e48](https://github.com/dword-design/ci/commit/7bf0e4894d1a2516adba7febc116825f6278640d))
+
+
+### BREAKING CHANGES
+
+* remove coveralls
+
 ## [1.1.3](https://github.com/dword-design/ci/compare/v1.1.2...v1.1.3) (2021-02-17)
 
 
