@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
 import { intersection, map, property, split } from '@dword-design/functions'
-import packageName from 'depcheck-package-name'
 import execa from 'execa'
 import makeCli from 'make-cli'
-import { readFileSync as safeReadFileSync } from 'safe-readfile'
 
 import releasedFiles from './released-files.json'
 
@@ -41,22 +39,6 @@ makeCli({
           }
         },
         name: 'push-changed-files [remoteUrl]',
-      },
-      {
-        // coverallsapp/github-action does not wirk with empty lcov.info files
-        handler: async () => {
-          const content = safeReadFileSync('./coverage/lcov.info', 'utf8') || ''
-          if (content !== '') {
-            const childProcess = execa.command(
-              `yarn ${packageName`coveralls`}`,
-              { stdio: ['pipe', 'inherit', 'inherit'] }
-            )
-            childProcess.stdin.write(content)
-            childProcess.stdin.end()
-            await childProcess
-          }
-        },
-        name: 'coveralls',
       },
     ]
     |> map(command => ({
