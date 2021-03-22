@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/dword-design/ci/compare/v2.0.0...v2.0.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#15](https://github.com/dword-design/ci/issues/15)) ([ca43d9e](https://github.com/dword-design/ci/commit/ca43d9ea71b116752b41f73117eb7def81cdd3e3))
+* lock file maintenance ([#18](https://github.com/dword-design/ci/issues/18)) ([8b9397b](https://github.com/dword-design/ci/commit/8b9397b16cbe83f62187e07c16d1f6eea0041dda))
+* rename commit message ([#19](https://github.com/dword-design/ci/issues/19)) ([b8ac149](https://github.com/dword-design/ci/commit/b8ac149e540680757ed1185c00727baaa62aa0d9))
+
 # [2.0.0](https://github.com/dword-design/ci/compare/v1.1.3...v2.0.0) (2021-03-11)
 
 
