@@ -32,7 +32,7 @@ makeCli({
                 : 'chore'
             await execa(
               'git',
-              ['commit', '-m', `${commitType}: update changed files`],
+              ['commit', '-m', `${commitType}: update config files`],
               { stdio: 'inherit' }
             )
             await execa.command('git push', { stdio: 'inherit' })
