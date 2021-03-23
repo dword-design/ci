@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/dword-design/ci/compare/v2.0.1...v2.0.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v3 ([#20](https://github.com/dword-design/ci/issues/20)) ([ca20aad](https://github.com/dword-design/ci/commit/ca20aad0aaf31a936903acd0b741e09474808ca3))
+
 ## [2.0.1](https://github.com/dword-design/ci/compare/v2.0.0...v2.0.1) (2021-03-22)
 
 
