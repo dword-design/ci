@@ -23,7 +23,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/functions": "^2.7.2",
+    "@dword-design/functions": "^3.0.0",
     "execa": "^5.0.0",
     "make-cli": "^1.0.16"
   },
