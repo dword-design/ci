@@ -17,6 +17,7 @@ makeCli({
             stdio: 'inherit',
           })
           await execa.command('git add .', { stdio: 'inherit' })
+
           const filenames =
             execa.command('git diff --name-only --staged', {
               all: true,
@@ -49,6 +50,7 @@ makeCli({
         } catch (error) {
           console.log(error)
           process.exit(1)
+
           return undefined
         }
       },

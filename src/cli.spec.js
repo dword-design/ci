@@ -7,6 +7,7 @@ import withLocalTmpDir from 'with-local-tmp-dir'
 
 const runTest = config => () => {
   config = { files: {}, test: identity, ...config }
+
   return withLocalTmpDir(async () => {
     await ensureDir('remote')
     process.chdir('remote')
@@ -23,6 +24,7 @@ const runTest = config => () => {
       'push-changed-files',
       P.join('..', 'remote'),
     ])
+
     const output = await execa.command('git log -n 1', { all: true })
     config.test(output.all)
   })
