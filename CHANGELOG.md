@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/dword-design/ci/compare/v2.0.2...v2.0.3) (2021-04-12)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#25](https://github.com/dword-design/ci/issues/25)) ([80b13fb](https://github.com/dword-design/ci/commit/80b13fb60ea47b1a186c95bc442f7e12ea696576))
+
 ## [2.0.2](https://github.com/dword-design/ci/compare/v2.0.1...v2.0.2) (2021-03-23)
 
 
