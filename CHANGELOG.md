@@ -1,3 +1,11 @@
+## [2.0.5](https://github.com/dword-design/ci/compare/v2.0.4...v2.0.5) (2021-04-22)
+
+
+### Bug Fixes
+
+* update config files ([53d541c](https://github.com/dword-design/ci/commit/53d541c10d3628cba0c8de4ad87b7dae61645eae))
+* updated package.json[description] ([#34](https://github.com/dword-design/ci/issues/34)) ([1a53c13](https://github.com/dword-design/ci/commit/1a53c13d835c8bee4d7344a219aea9267fee4c31))
+
 ## [2.0.4](https://github.com/dword-design/ci/compare/v2.0.3...v2.0.4) (2021-04-21)
 
 
