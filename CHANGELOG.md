@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/dword-design/ci/compare/v2.0.7...v3.0.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#38](https://github.com/dword-design/ci/issues/38)) ([37491ac](https://github.com/dword-design/ci/commit/37491acdecf3805378888f0dfece6dd30a5c46b5))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [2.0.7](https://github.com/dword-design/ci/compare/v2.0.6...v2.0.7) (2021-04-28)
 
 
