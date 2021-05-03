@@ -30,7 +30,7 @@
     "@dword-design/base": "^8.0.0",
     "fs-extra": "^9.0.0",
     "output-files": "^1.1.15",
-    "with-local-tmp-dir": "^3.0.0"
+    "with-local-tmp-dir": "^4.0.0"
   },
   "engines": {
     "node": ">=12"
