@@ -1,3 +1,12 @@
+## [3.0.2](https://github.com/dword-design/ci/compare/v3.0.1...v3.0.2) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency fs-extra to v10 ([#40](https://github.com/dword-design/ci/issues/40)) ([ef03bdb](https://github.com/dword-design/ci/commit/ef03bdbd92af2c3bc06db3587c5fcbe0710242d2))
+* update dependency make-cli to v2 ([#41](https://github.com/dword-design/ci/issues/41)) ([f394783](https://github.com/dword-design/ci/commit/f394783c39f6b5be6405f8d78775cd28b46e19ba))
+* update dependency with-local-tmp-dir to v4 ([#43](https://github.com/dword-design/ci/issues/43)) ([451ec98](https://github.com/dword-design/ci/commit/451ec9856f44a0a6cd91dda8742397546aab662b))
+
 ## [3.0.1](https://github.com/dword-design/ci/compare/v3.0.0...v3.0.1) (2021-05-04)
 
 
