@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/dword-design/ci/compare/v3.0.5...v3.0.6) (2021-07-06)
+
+
+### Bug Fixes
+
+* update config files ([da2614b](https://github.com/dword-design/ci/commit/da2614bc977b33deacf4b92a951060ed7555def2))
+
 ## [3.0.5](https://github.com/dword-design/ci/compare/v3.0.4...v3.0.5) (2021-06-14)
 
 
