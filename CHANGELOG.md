@@ -1,3 +1,10 @@
+## [3.0.9](https://github.com/dword-design/ci/compare/v3.0.8...v3.0.9) (2022-01-12)
+
+
+### Bug Fixes
+
+* update config files ([b68c87b](https://github.com/dword-design/ci/commit/b68c87bd50a09e1622716183c0191b76faed4ab4))
+
 ## [3.0.8](https://github.com/dword-design/ci/compare/v3.0.7...v3.0.8) (2022-01-04)
 
 
