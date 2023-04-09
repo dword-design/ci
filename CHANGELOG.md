@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/dword-design/ci/compare/v3.0.9...v4.0.0) (2023-04-09)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#88](https://github.com/dword-design/ci/issues/88)) ([a3fea93](https://github.com/dword-design/ci/commit/a3fea933d19a8fb77c9bf5459f5b0fe711cd661d))
+
+
+### BREAKING CHANGES
+
+* drop node 12 support, move to esm
+
 ## [3.0.9](https://github.com/dword-design/ci/compare/v3.0.8...v3.0.9) (2022-01-12)
 
 
