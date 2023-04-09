@@ -1,25 +1,25 @@
 #!/usr/bin/env node
 
 import { intersection, map, property, split } from '@dword-design/functions'
-import execa from 'execa'
+import { execa, execaCommand } from 'execa'
 import makeCli from 'make-cli'
 
-import releasedFiles from './released-files.json'
+import releasedFiles from './released-files.js'
 
 makeCli({
   commands:
     [
       {
         handler: async (
-          remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`
+          remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`,
         ) => {
-          await execa.command(`git remote set-url origin ${remoteUrl}`, {
+          await execaCommand(`git remote set-url origin ${remoteUrl}`, {
             stdio: 'inherit',
           })
-          await execa.command('git add .', { stdio: 'inherit' })
+          await execaCommand('git add .', { stdio: 'inherit' })
 
           const filenames =
-            execa.command('git diff --name-only --staged', {
+            execaCommand('git diff --name-only --staged', {
               all: true,
             })
             |> await
@@ -34,9 +34,9 @@ makeCli({
             await execa(
               'git',
               ['commit', '-m', `${commitType}: update config files`],
-              { stdio: 'inherit' }
+              { stdio: 'inherit' },
             )
-            await execa.command('git push', { stdio: 'inherit' })
+            await execaCommand('git push', { stdio: 'inherit' })
           }
         },
         name: 'push-changed-files [remoteUrl]',
