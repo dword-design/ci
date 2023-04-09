@@ -1,31 +1,35 @@
-import { endent, identity, mapValues } from '@dword-design/functions'
-import execa from 'execa'
-import { ensureDir } from 'fs-extra'
+import { identity, mapValues } from '@dword-design/functions'
+import { execa, execaCommand } from 'execa'
+import fs, { ensureDir } from 'fs-extra'
+import { createRequire } from 'module'
 import outputFiles from 'output-files'
 import P from 'path'
 import withLocalTmpDir from 'with-local-tmp-dir'
+
+const _require = createRequire(import.meta.url)
 
 const runTest = config => () => {
   config = { files: {}, test: identity, ...config }
 
   return withLocalTmpDir(async () => {
+    await fs.outputFile('package.json', JSON.stringify({ type: 'module' }))
     await ensureDir('remote')
     process.chdir('remote')
-    await execa.command('git init --bare')
+    await execaCommand('git init --bare')
     process.chdir('..')
-    await execa.command('git clone remote local')
+    await execaCommand('git clone remote local')
     process.chdir('local')
-    await execa.command('git config user.email "foo@bar.de"')
-    await execa.command('git config user.name "foo"')
-    await execa.command('git commit --allow-empty -m "init"')
-    await execa.command('git push')
+    await execaCommand('git config user.email "foo@bar.de"')
+    await execaCommand('git config user.name "foo"')
+    await execaCommand('git commit --allow-empty -m "init"')
+    await execaCommand('git push')
     await outputFiles(config.files)
-    await execa(require.resolve('./cli'), [
+    await execa(_require.resolve('./cli.js'), [
       'push-changed-files',
       P.join('..', 'remote'),
     ])
 
-    const output = await execa.command('git log -n 1', { all: true })
+    const output = await execaCommand('git log -n 1', { all: true })
     config.test(output.all)
   })
 }
@@ -34,11 +38,7 @@ export default {
   'no changes': {},
   'released files': {
     files: {
-      'package.json': endent`
-        {
-          "name": "foo"
-        }
-      `,
+      'package.json': JSON.stringify({ name: 'changed', type: 'module' }),
     },
     test: all => expect(all).toMatch('fix:'),
   },
