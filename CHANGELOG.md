@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/dword-design/ci/compare/v4.0.0...v4.0.1) (2023-04-10)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4.1.7 ([3fc4880](https://github.com/dword-design/ci/commit/3fc4880a58f0ff363a005dbeeb98256c214ab316))
+* update dependency output-files to v2.0.23 ([f8b0479](https://github.com/dword-design/ci/commit/f8b04799b7a275c8076a94f1b2021b1384d7dd33))
+
 # [4.0.0](https://github.com/dword-design/ci/compare/v3.0.9...v4.0.0) (2023-04-09)
 
 
