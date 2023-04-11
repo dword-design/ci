@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/dword-design/ci/compare/v4.0.1...v4.0.2) (2023-04-11)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v9.5.12 ([5bbdcd8](https://github.com/dword-design/ci/commit/5bbdcd8acc7185dc636bdf4907bdbaf014c2bc49))
+
 ## [4.0.1](https://github.com/dword-design/ci/compare/v4.0.0...v4.0.1) (2023-04-10)
 
 
