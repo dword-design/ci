@@ -11266,10 +11266,10 @@ wide-align@^1.1.5:
   dependencies:
     string-width "^1.0.2 || 2 || 3 || 4"
 
-with-local-tmp-dir@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/with-local-tmp-dir/-/with-local-tmp-dir-4.1.0.tgz#8af69f0ebe10e930c9627f5eceb6b169b240afe9"
-  integrity sha512-cf1vG89YXvXfIU/yEf/YvOLr5onJxEj9vSaSeIPcgvvr5Uk91VPGfe8CfAJPcg9kiaieeSixZKGe6IAr+K91eA==
+with-local-tmp-dir@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/with-local-tmp-dir/-/with-local-tmp-dir-5.0.1.tgz#5fa0570e1560008c6089c8f6759a5236f7af4a28"
+  integrity sha512-Ds8Ssl9sfMZArPBlSkEQwxh+EVq3IG8lWxTUipe1ZxP5eNNrkRC622ukpAkhR63jCSu5mvqJ/3bEl1RakRZufw==
   dependencies:
     "@dword-design/chdir" "^2.0.0"
     tmp-promise "^3.0.0"
