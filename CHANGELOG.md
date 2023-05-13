@@ -1,3 +1,10 @@
+## [4.0.6](https://github.com/dword-design/ci/compare/v4.0.5...v4.0.6) (2023-05-13)
+
+
+### Bug Fixes
+
+* fo ([42d7f64](https://github.com/dword-design/ci/commit/42d7f644e37f99b832faf6cbcd327d875ba1ae92))
+
 ## [4.0.5](https://github.com/dword-design/ci/compare/v4.0.4...v4.0.5) (2023-04-12)
 
 
