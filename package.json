@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@dword-design/functions": "^4.0.0",
-    "execa": "^7.1.1",
+    "execa": "^9.0.0",
     "make-cli": "^3.0.4"
   },
   "devDependencies": {
