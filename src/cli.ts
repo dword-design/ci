@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 
-import { intersection, map, property, split } from '@dword-design/functions'
+import { intersection } from 'lodash-es'
 import { execa, execaCommand } from 'execa'
 import makeCli from 'make-cli'
 
-import releasedFiles from './released-files.js'
-
-makeCli({
-  commands:
-    [
-      {
+import releasedFiles from './released-files'
+try {
+  makeCli({
+    commands: {
+      'push-changed-files [remoteUrl]': {
         handler: async (
           remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`,
         ) => {
@@ -18,16 +17,14 @@ makeCli({
           })
           await execaCommand('git add .', { stdio: 'inherit' })
 
-          const filenames =
-            execaCommand('git diff --name-only --staged', {
+          const { all: output } =
+            await execaCommand('git diff --name-only --staged', {
               all: true,
             })
-            |> await
-            |> property('all')
-            |> (text => (text === '' ? [] : text |> split('\n')))
+          const filenames = output === '' ? [] : output.split('\n');
           if (filenames.length > 0) {
             const commitType =
-              (filenames |> intersection(releasedFiles) |> property('length')) >
+              intersection(filenames, releasedFiles).length >
               0
                 ? 'fix'
                 : 'chore'
@@ -39,20 +36,10 @@ makeCli({
             await execaCommand('git push', { stdio: 'inherit' })
           }
         },
-        name: 'push-changed-files [remoteUrl]',
       },
-    ]
-    |> map(command => ({
-      ...command,
-      handler: async (...args) => {
-        try {
-          return command.handler(...args) |> await
-        } catch (error) {
-          console.log(error)
-          process.exit(1)
-
-          return undefined
-        }
-      },
-    })),
-})
+    },
+  })
+} catch (error) {
+  console.log(error)
+  process.exit(1)
+}
