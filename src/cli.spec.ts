@@ -46,7 +46,7 @@ for (const [name, _testConfig] of Object.entries(tests)) {
     await execaCommand('git config user.name "foo"', { cwd: localDir });
     await execaCommand('git commit --allow-empty -m "init"', { cwd: localDir });
     await execaCommand('git push', { cwd: localDir });
-    await outputFiles(cwd, testConfig.files);
+    await outputFiles(localDir, testConfig.files);
 
     await execa(
       'tsx',
