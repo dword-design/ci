@@ -1,1 +1,1 @@
-export default ['package.json', 'README.md']
+export default ['package.json', 'README.md'];

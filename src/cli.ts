@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import { intersection } from 'lodash-es'
-import { execa, execaCommand } from 'execa'
-import makeCli from 'make-cli'
+import { execa, execaCommand } from 'execa';
+import { intersection } from 'lodash-es';
+import makeCli from 'make-cli';
 
-import releasedFiles from './released-files'
+import releasedFiles from './released-files';
+
 try {
   makeCli({
     commands: {
@@ -14,32 +15,36 @@ try {
         ) => {
           await execaCommand(`git remote set-url origin ${remoteUrl}`, {
             stdio: 'inherit',
-          })
-          await execaCommand('git add .', { stdio: 'inherit' })
+          });
 
-          const { all: output } =
-            await execaCommand('git diff --name-only --staged', {
-              all: true,
-            })
+          await execaCommand('git add .', { stdio: 'inherit' });
+
+          const { all: output } = await execaCommand(
+            'git diff --name-only --staged',
+            { all: true },
+          );
+
           const filenames = output === '' ? [] : output.split('\n');
+
           if (filenames.length > 0) {
             const commitType =
-              intersection(filenames, releasedFiles).length >
-              0
+              intersection(filenames, releasedFiles).length > 0
                 ? 'fix'
-                : 'chore'
+                : 'chore';
+
             await execa(
               'git',
               ['commit', '-m', `${commitType}: update config files`],
               { stdio: 'inherit' },
-            )
-            await execaCommand('git push', { stdio: 'inherit' })
+            );
+
+            await execaCommand('git push', { stdio: 'inherit' });
           }
         },
       },
     },
-  })
+  });
 } catch (error) {
-  console.log(error)
-  process.exit(1)
+  console.log(error);
+  process.exit(1);
 }
