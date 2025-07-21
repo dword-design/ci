@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/dword-design/ci/compare/v4.0.6...v5.0.0) (2025-07-21)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#121](https://github.com/dword-design/ci/issues/121)) ([fc7dee1](https://github.com/dword-design/ci/commit/fc7dee10fab92d2bb444b23074a6a205b395e41a))
+
+
+### BREAKING CHANGES
+
+* node.js >= 20
+
 ## [4.0.6](https://github.com/dword-design/ci/compare/v4.0.5...v4.0.6) (2023-05-13)
 
 
