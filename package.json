@@ -27,7 +27,7 @@
   "dependencies": {
     "execa": "^9.6.0",
     "lodash-es": "^4.17.21",
-    "make-cli": "^4.0.8"
+    "make-cli": "^5.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^15.1.2",
