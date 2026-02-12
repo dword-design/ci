@@ -30,7 +30,7 @@
     "make-cli": "^4.0.8"
   },
   "devDependencies": {
-    "@dword-design/base": "^15.1.2",
+    "@dword-design/base": "^16.0.0",
     "@dword-design/defu": "^1.0.3",
     "@playwright/test": "^1.54.1",
     "fs-extra": "^11.1.1",
