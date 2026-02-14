@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/dword-design/ci/compare/v5.0.0...v6.0.0) (2026-02-14)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v16 ([#136](https://github.com/dword-design/ci/issues/136)) ([7abc520](https://github.com/dword-design/ci/commit/7abc52044ab55583668effeab9d1185037da1091))
+
+
+### BREAKING CHANGES
+
+* node.js >= 22
+
 # [5.0.0](https://github.com/dword-design/ci/compare/v4.0.6...v5.0.0) (2025-07-21)
 
 
