@@ -31,8 +31,8 @@ importers:
         specifier: ^11.1.1
         version: 11.3.0
       output-files:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^4.0.0
+        version: 4.0.0
       tsx:
         specifier: ^4.20.3
         version: 4.20.3
@@ -2992,6 +2992,10 @@ packages:
   output-files@3.0.0:
     resolution: {integrity: sha512-mFwRkTDiw6evbQW1G6To+Yp7tN2WOVh8ne7AyzTRWtqPU+Sza3ZhtXEO3vpLnaYPYEIUSrlILeZVp0rOmcA5Kw==}
     engines: {node: '>=18'}
+
+  output-files@4.0.0:
+    resolution: {integrity: sha512-WfOFV7mEwTisw3atSd2PcMx0+6ZrQk3iYRu6mwQS54XN6d3I5PWqDoT4T6nBdIxiDQFNyEoLOJvciyeCMLcaCQ==}
+    engines: {node: '>=22'}
 
   p-each-series@3.0.0:
     resolution: {integrity: sha512-lastgtAdoH9YaLyDa5i5z64q+kzOcQHsQ5SsZJD3q0VEyI8mq872S3geuNbRUQLVAE9siMfgKrpj7MloKFHruw==}
@@ -7298,6 +7302,10 @@ snapshots:
   os-tmpdir@1.0.2: {}
 
   output-files@3.0.0:
+    dependencies:
+      fs-extra: 11.3.0
+
+  output-files@4.0.0:
     dependencies:
       fs-extra: 11.3.0
 
