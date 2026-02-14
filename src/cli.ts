@@ -13,7 +13,7 @@ try {
         handler: async (
           remoteUrl = `https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}`,
         ) => {
-          await execaCommand(`git remote set-url origin ${remoteUrl}`, {
+          await execa('git', ['remote', 'set-url', 'origin', remoteUrl], {
             stdio: 'inherit',
           });
 

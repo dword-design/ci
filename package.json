@@ -25,21 +25,23 @@
     "verify": "base verify"
   },
   "dependencies": {
-    "execa": "^9.6.0",
-    "lodash-es": "^4.17.21",
-    "make-cli": "^4.0.8"
+    "execa": "^9.6.1",
+    "lodash-es": "^4.17.23",
+    "make-cli": "^6.0.0"
   },
   "devDependencies": {
-    "@dword-design/base": "^16.0.0",
-    "@dword-design/defu": "^1.0.3",
-    "@playwright/test": "^1.54.1",
-    "fs-extra": "^11.1.1",
-    "output-files": "^3.0.0",
-    "tsx": "^4.20.3"
+    "@dword-design/base": "^16.2.2",
+    "@dword-design/defaults": "^1.1.2",
+    "@playwright/test": "^1.58.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^25.2.3",
+    "fs-extra": "^11.3.3",
+    "output-files": "^4.0.0",
+    "tsx": "^4.21.0"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module';
 import pathLib from 'node:path';
 
-import defu from '@dword-design/defu';
+import defaults from '@dword-design/defaults';
 import { expect, test } from '@playwright/test';
 import { execa, execaCommand } from 'execa';
 import fs, { ensureDir } from 'fs-extra';
@@ -27,7 +27,7 @@ const tests: Record<string, TestConfig> = {
 };
 
 for (const [name, _testConfig] of Object.entries(tests)) {
-  const testConfig = defu(_testConfig, { files: {}, test: () => {} });
+  const testConfig = defaults(_testConfig, { files: {}, test: () => {} });
 
   test(name, async ({}, testInfo) => {
     const cwd = testInfo.outputPath();
