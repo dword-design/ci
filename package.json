@@ -31,7 +31,7 @@
     "make-cli": "^6.0.0"
   },
   "devDependencies": {
-    "@dword-design/base": "^16.2.2",
+    "@dword-design/base": "^17.0.0",
     "@dword-design/defaults": "^1.1.2",
     "@playwright/test": "^1.58.2",
     "@types/fs-extra": "^11.0.4",
